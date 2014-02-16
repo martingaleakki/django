@@ -1,0 +1,24 @@
+{% extends "slicedinvesting/common/topNavBar.html" %} 
+{% block body %}
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+{% include "slicedinvesting/landing/marketing/centermessage.html" %}
+<div class="container marketing">
+
+	<!-- Three columns of text below the carousel -->
+	<div class="row">
+	{% include "slicedinvesting/landing/marketing/investor.html" %} 
+	{% include "slicedinvesting/landing/marketing/advisor.html" %} 
+	{% include "slicedinvesting/landing/marketing/hedgefund.html" %}
+	</div>
+	<!-- /.row -->
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "slicedinvesting/common/footer.html" %}
+{% endblock %}  
