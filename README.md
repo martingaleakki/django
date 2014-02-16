@@ -1,5 +1,5 @@
-Setting up virtualenv
+Steps
 ======================
-
-virtualenv --no-site-packages --distribute dev && source dev/bin/activate && pip install -r requirements.txt
+Setting up virtualenv
+	virtualenv --no-site-packages --distribute dev && source dev/bin/activate && pip install -r requirements.txt
 
