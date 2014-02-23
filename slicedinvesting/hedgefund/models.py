@@ -4,10 +4,10 @@ from django.db import models
 
 
 class HedgeFund(models.Model):
-    name = models.CharField(max_length=50)
-    type= models.CharField(max_length=50)
+    name = models.CharField(max_length=50,null=True)
+    type= models.CharField(max_length=50,null=True)
     description=models.TextField(null=True, blank=True)
-    completionPerc=models.FloatField(default=0)
+    percCompleted=models.FloatField(default=0)
     portfolioManager=models.CharField(max_length=50,null=True, blank=True)
     numYearsActive=models.FloatField(default=0) #TBD This can be backed out from Origin Date
     assetsUnderManagement=models.IntegerField(default=0)

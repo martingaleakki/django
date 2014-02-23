@@ -46,7 +46,8 @@ INSTALLED_APPS = (
     'twitter_bootstrap',
     'pipeline',
     'hedgefund',
-    'south',)
+    'south',
+    'investor')
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

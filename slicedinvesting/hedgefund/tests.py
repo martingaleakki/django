@@ -31,7 +31,7 @@ class HedgeFundTestCase(TestCase):
         self.__hedgeFund=HedgeFund.objects.create(name=self.__hFName,
                                                   type=self.__hFType,
                                                   description=self.__hFDescription,
-                                                  completionPerc=self.__hFCompletionPerc,
+                                                  percCompleted=self.__hFCompletionPerc,
                                                   portfolioManager=self.__hFPortfolioManager,
                                                   numYearsActive=self.__hFNumYearsActive,
                                                   assetsUnderManagement=self.__hFAssetsUnderManagement,
