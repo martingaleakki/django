@@ -1,0 +1,3 @@
+{% for p in ListView %}
+<a href="{% url profiles_profile_detail p.user %}">{{ p }}</a>&gt;
+{% endfor %}

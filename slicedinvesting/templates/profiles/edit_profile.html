@@ -1,0 +1,12 @@
+{% extends "slicedinvesting/common/topNavBar.html" %} 
+{% block body %}
+<h1>Edit contact info for {{ user }}</h1>
+<form action="" method="POST">
+	{{ form }} 
+	<input id="submit" type="submit" name="submit" value="Update" />
+</form>
+ 
+{% endblock %}
+{% block footer %}
+{% include "slicedinvesting/common/footer.html" %}
+{% endblock %} 

@@ -10,5 +10,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', include('landing.urls')),
+    url(r'^investor/', include('investor.urls')),
     url(r'^landing/', include('landing.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^profiles/', include('profiles.urls')),
 )

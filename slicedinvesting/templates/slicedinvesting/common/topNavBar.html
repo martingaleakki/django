@@ -61,6 +61,17 @@ body {
 								<li><a href="/landing/#about">About</a></li>
 								<li><a href="/landing/#about">FAQ</a></li>
 								<li><a href="/landing/#contact">Contact</a></li>
+								
+							</ul>
+							
+							<ul class="nav navbar-nav pull-right">
+							{% if not user.is_authenticated %}
+								<li><a href="/accounts/login/">Login</a></li>
+							 	<li><a href="/accounts/register/">Sign Up</a></li>
+						{% endif %}
+						{% if user.is_authenticated %}
+						<li><a href="/accounts/logout/">Logout</a></li>
+   						 {% endif %}
 							</ul>
 						</div>
 					</div>

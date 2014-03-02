@@ -1,0 +1,11 @@
+{% extends "slicedinvesting/common/topNavBar.html" %} 
+{% block body %}
+<h2>Register</h2>
+<form action="/accounts/register/" method="post">{% csrf_token %}
+{{ form.as_table }}
+<input type="submit" value="Submit" />
+{% endblock %}
+
+{% block footer %}
+{% include "slicedinvesting/common/footer.html" %}
+{% endblock %}  

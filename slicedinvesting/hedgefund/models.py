@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 
-class HedgeFund(models.Model):
-    name = models.CharField(max_length=50,null=True)
-    type= models.CharField(max_length=50,null=True)
+class HedgeFundProfile(models.Model):
+    name = models.CharField(max_length=50,null=True,blank=True)
+    type= models.CharField(max_length=50,null=True,blank=True)
     description=models.TextField(null=True, blank=True)
     percCompleted=models.FloatField(default=0)
     portfolioManager=models.CharField(max_length=50,null=True, blank=True)
@@ -23,3 +23,5 @@ class HedgeFund(models.Model):
     returnMetrics=models.FloatField(default=0) #TBD This has to be a class
     originDate=models.DateField(null=True)
     website=models.TextField(null=True)
+    riskLevel=models.IntegerField(default=0)
+    location= models.CharField(max_length=50,null=True,blank=True)

@@ -38,6 +38,7 @@ ACCOUNT_OPEN_SIGNUP = False
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -47,7 +48,11 @@ INSTALLED_APPS = (
     'pipeline',
     'hedgefund',
     'south',
-    'investor')
+    'investor',
+    'csvimport',
+    'registration',
+    'profiles')
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,6 +61,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.messages.context_processors.messages',
+    'django.contrib.auth.context_processors.auth',                               
 )
 
 TEMPLATE_DIRS = (
@@ -85,7 +95,7 @@ STATIC_FINDERS=(
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR + '/db',
     }
 }
 
@@ -167,4 +177,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window;
 
+FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
+FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
+AUTH_PROFILE_MODULE = "investor.InvestorProfile"
+SITE_ID=1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

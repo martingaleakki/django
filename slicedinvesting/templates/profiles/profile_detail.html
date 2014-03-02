@@ -1,0 +1,21 @@
+{% extends "slicedinvesting/common/topNavBar.html" %} 
+{% block body %}
+<h2>Profile</h2>
+
+{% ifequal user profile.user  %}
+	<p>
+		<a href="{% url 'profiles_edit_profile' %}" class="button blue">Edit my profile</a> 
+	</p>
+{% endifequal %}
+<ul>
+{% for name,value in profile.get_fields %}
+
+<li>{{ name }} => {{ value }}</li>
+
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block footer %}
+{% include "slicedinvesting/common/footer.html" %}
+{% endblock %} 
